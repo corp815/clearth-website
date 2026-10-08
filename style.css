@@ -1,0 +1,546 @@
+/* =========================================
+   CLEARTH — METHANE MITIGATION
+   Minimalist environmental/scientific design
+   ========================================= */
+
+
+/* ---------- Variables ---------- */
+
+:root {
+    --black: #151815;
+    --dark: #202821;
+
+    --green: #52695a;
+    --green-light: #718878;
+
+    --cream: #f5f5ef;
+    --white: #ffffff;
+
+    --line: #d9ddd6;
+
+    --text: #292d2a;
+    --muted: #69706b;
+
+    --max-width: 1200px;
+    --narrow-width: 820px;
+}
+
+
+/* ---------- Reset ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--white);
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    max-width: 850px;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.98;
+}
+
+h2 {
+    font-size: clamp(2.3rem, 4vw, 4.2rem);
+    line-height: 1.05;
+}
+
+p {
+    max-width: 700px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+
+/* ---------- Layout ---------- */
+
+.container {
+    width: min(
+        calc(100% - 64px),
+        var(--max-width)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.narrow {
+    max-width: var(--narrow-width);
+}
+
+.section {
+    padding: 140px 0;
+}
+
+.section-light {
+    background: var(--cream);
+}
+
+
+/* ---------- Header / Navigation ---------- */
+
+.site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 10;
+
+    color: var(--black);
+}
+
+.nav-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 28px;
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+    display: block;
+
+    width: 170px;
+
+    line-height: 0;
+}
+
+.logo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.navigation a {
+    transition:
+        color 0.2s ease;
+}
+
+.navigation a:hover {
+    color: var(--green);
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 140px 0 100px;
+
+    background: var(--cream);
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(300px, 0.95fr);
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.hero-content h1 {
+    margin-bottom: 38px;
+}
+
+.hero-text {
+    max-width: 600px;
+
+    margin-bottom: 40px;
+
+    color: var(--muted);
+
+    font-size: 1.15rem;
+}
+
+.hero-image {
+    overflow: hidden;
+
+    background: #dfe4de;
+
+    aspect-ratio: 4 / 5;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ---------- Eyebrow Text ---------- */
+
+.eyebrow {
+    margin-bottom: 28px;
+
+    color: var(--green);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- Text Links ---------- */
+
+.text-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-bottom: 1px solid var(--black);
+
+    padding-bottom: 5px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+.text-link span {
+    font-size: 1rem;
+}
+
+
+/* ---------- Large Text ---------- */
+
+.section-light .large-text,
+#work .large-text {
+    margin-bottom: 32px;
+
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.feedback {
+    color: var(--green);
+    font-weight: 500;
+}
+
+
+/* ---------- Contact ---------- */
+
+.contact-section {
+    padding: 160px 0;
+
+    background: var(--green);
+
+    color: var(--white);
+}
+
+.contact-container {
+    max-width: var(--narrow-width);
+}
+
+.contact-section .eyebrow {
+    color: #b7c5b9;
+}
+
+.contact-section h2 {
+    margin-bottom: 35px;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+}
+
+.contact-intro {
+    max-width: 500px;
+
+    margin-bottom: 45px;
+
+    color: #d3dbd4;
+}
+
+.email-link {
+    display: inline-block;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+    padding-bottom: 5px;
+
+    font-size: clamp(1.4rem, 3vw, 2.3rem);
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.email-link:hover {
+    color: #d5e1d6;
+
+    border-color: #d5e1d6;
+}
+
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    padding: 30px 0;
+
+    background: var(--black);
+
+    color: #9da39e;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.04em;
+}
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+}
+
+.footer-logo {
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.footer-container > div:nth-child(2) {
+    text-align: center;
+}
+
+.footer-container > div:last-child {
+    text-align: right;
+}
+
+.site-footer a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .container {
+        width: min(
+            calc(100% - 40px),
+            var(--max-width)
+        );
+    }
+
+
+    /* Header */
+
+    .nav-container {
+        padding-top: 22px;
+    }
+
+    .logo {
+        width: 135px;
+    }
+
+    .navigation {
+        gap: 16px;
+
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .hero-image {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 90px 0;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        padding: 100px 0;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .footer-container > div:nth-child(2),
+    .footer-container > div:last-child {
+        text-align: left;
+    }
+}
+
+
+/* =========================================
+   Very Small Screens
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .navigation {
+        gap: 10px;
+
+        font-size: 0.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .hero {
+        padding-top: 115px;
+        padding-bottom: 70px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-light .large-text,
+    #work .large-text {
+        font-size: 1.12rem;
+    }
+
+    .contact-section {
+        padding: 85px 0;
+    }
+}
